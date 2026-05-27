@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SELIQUE – Dance Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="logo">SELIQUE</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#classes">Kurse</a></li>
+      <li><a href="#instructors">Team</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+      <li><a href="#contact" class="nav-cta">Probestunde</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="floating-shapes">
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+        <div class="shape s3"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Willkommen bei</p>
+      <h1 class="hero-title reveal delay-1">SELIQUE</h1>
+      <p class="hero-subtitle reveal delay-2">Wo Leidenschaft zur Kunst wird.</p>
+      <div class="hero-actions reveal delay-3">
+        <a href="#classes" class="btn btn-primary">Kurse entdecken</a>
+        <a href="#about" class="btn btn-outline">Mehr erfahren</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- MARQUEE BANNER -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>Contemporary</span><span class="dot">·</span>
+      <span>Latin</span><span class="dot">·</span>
+      <span>Hip-Hop</span><span class="dot">·</span>
+      <span>Ballet</span><span class="dot">·</span>
+      <span>Jazz</span><span class="dot">·</span>
+      <span>Heels</span><span class="dot">·</span>
+      <span>Waacking</span><span class="dot">·</span>
+      <span>Contemporary</span><span class="dot">·</span>
+      <span>Latin</span><span class="dot">·</span>
+      <span>Hip-Hop</span><span class="dot">·</span>
+      <span>Ballet</span><span class="dot">·</span>
+      <span>Jazz</span><span class="dot">·</span>
+      <span>Heels</span><span class="dot">·</span>
+      <span>Waacking</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-card card-1">
+            <div class="card-inner">
+              <div class="stat-number">12+</div>
+              <div class="stat-label">Jahre Erfahrung</div>
+            </div>
+          </div>
+          <div class="about-card card-2">
+            <div class="card-inner">
+              <div class="stat-number">800+</div>
+              <div class="stat-label">Schüler</div>
+            </div>
+          </div>
+          <div class="about-card card-3">
+            <div class="card-inner">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Kurse</div>
+            </div>
+          </div>
+          <div class="about-image-placeholder">
+            <div class="silhouette"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-eyebrow">Über uns</span>
+          <h2 class="section-title">Tanz ist mehr als Bewegung — es ist Ausdruck</h2>
+          <p>Selique Dance wurde mit einer klaren Vision gegründet: einen Ort zu schaffen, an dem Tanz keine Grenzen kennt. Ob Anfänger oder Fortgeschrittene — bei uns findet jeder seinen Rhythmus.</p>
+          <p>Unser professionelles Team aus leidenschaftlichen Tanzlehrerinnen und Tanzlehrern begleitet dich auf deinem Weg — mit Herz, Fachwissen und einer Atmosphäre, in der du dich entfalten kannst.</p>
+          <a href="#classes" class="btn btn-primary">Unsere Kurse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section id="classes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Kursangebot</span>
+        <h2 class="section-title">Finde deinen Stil</h2>
+        <p class="section-desc">Von klassischem Ballett bis urbaner Street-Dance — wir bieten für jeden Geschmack das Richtige.</p>
+      </div>
+      <div class="classes-grid">
+        <div class="class-card" data-delay="0">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M24 17c-7 0-12 5-12 11v2h24v-2c0-6-5-11-12-11z" stroke="currentColor" stroke-width="2"/><path d="M16 30l-4 10M32 30l4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Ballet & Contemporary</h3>
+          <p>Klassische Technik trifft modernen Ausdruck. Für alle Levels.</p>
+          <div class="class-meta">
+            <span>Mo, Mi · 18:00</span>
+            <span>All levels</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card featured" data-delay="100">
+          <div class="class-badge">Beliebt</div>
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 36c4-8 12-12 16-12s12 4 16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Hip-Hop & Urban</h3>
+          <p>Authentische Street-Dance Kultur — energiegeladen, kreativ, frei.</p>
+          <div class="class-meta">
+            <span>Di, Do · 19:00</span>
+            <span>Beginner – Advanced</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="200">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 38c0-6 5-10 12-10s12 4 12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 28V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 20l6-4 6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="11" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Heels & Jazz Funk</h3>
+          <p>Power, Femininity und Style — tanze mit Absatz und voller Energie.</p>
+          <div class="class-meta">
+            <span>Fr · 18:30</span>
+            <span>Intermediate</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="300">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M14 10l-4 28M34 10l4 28M14 24h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="10" r="3" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Latin & Salsa</h3>
+          <p>Feuer, Rhythmus, Leidenschaft — Latin Dance für Paare und Solo.</p>
+          <div class="class-meta">
+            <span>Sa · 17:00</span>
+            <span>Beginner welcome</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="400">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="20" width="28" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 20V14a6 6 0 0112 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="29" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Kids & Teens</h3>
+          <p>Tanz für Kinder ab 5 Jahren — spielerisch, kreativ und altersgerecht.</p>
+          <div class="class-meta">
+            <span>Sa · 10:00 – 13:00</span>
+            <span>Ab 5 Jahren</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="500">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 8v32M8 24h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M13 13l22 22M35 13L13 35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Workshops & Events</h3>
+          <p>Gastkünstler, Intensiv-Workshops und unvergessliche Performance-Nächte.</p>
+          <div class="class-meta">
+            <span>Regelmäßig</span>
+            <span>Alle willkommen</span>
+          </div>
+          <a href="#contact" class="class-link">Mehr erfahren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE STRIP -->
+  <section id="experience">
+    <div class="experience-inner">
+      <div class="exp-text">
+        <span class="section-eyebrow light">Das Selique-Feeling</span>
+        <h2>Tanz verbindet.<br/>Selique inspiriert.</h2>
+        <p>Unser Studio ist mehr als ein Kursraum — es ist eine Community. Ein Ort für alle, die tanzen wollen, müssen, lieben.</p>
+        <a href="#contact" class="btn btn-primary">Probestunde buchen</a>
+      </div>
+      <div class="exp-features">
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Professionelle Lehrkräfte</strong>
+            <p>Zertifiziert, leidenschaftlich, erfahren.</p>
+          </div>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Moderne Studios</strong>
+            <p>Spiegelwände, Sprungboden, Soundanlage.</p>
+          </div>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Flexible Kurszeiten</strong>
+            <p>Morgens, abends, am Wochenende.</p>
+          </div>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Alle Levels willkommen</strong>
+            <p>Von der ersten Tanzerfahrung bis zur Bühne.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTORS -->
+  <section id="instructors">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Unser Team</span>
+        <h2 class="section-title">Deine Tanzlehrerinnen & -lehrer</h2>
+        <p class="section-desc">Leidenschaft trifft Professionalität — lerne unser Team kennen.</p>
+      </div>
+      <div class="instructors-grid">
+        <div class="instructor-card">
+          <div class="instructor-photo photo-1">
+            <div class="instructor-silhouette"></div>
+          </div>
+          <div class="instructor-info">
+            <h3>Sofia Marchetti</h3>
+            <span class="instructor-style">Ballet · Contemporary</span>
+            <p>15 Jahre Bühnenerfahrung. Ausgebildet in Mailand und Wien.</p>
+            <div class="instructor-socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-photo photo-2">
+            <div class="instructor-silhouette"></div>
+          </div>
+          <div class="instructor-info">
+            <h3>Marcus Rivera</h3>
+            <span class="instructor-style">Hip-Hop · Breaking</span>
+            <p>International bekannter Street-Dancer und Choreograf.</p>
+            <div class="instructor-socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-photo photo-3">
+            <div class="instructor-silhouette"></div>
+          </div>
+          <div class="instructor-info">
+            <h3>Leila Santos</h3>
+            <span class="instructor-style">Latin · Heels · Jazz</span>
+            <p>Weltmeisterin im Latin Dance, Choreografin für Film & TV.</p>
+            <div class="instructor-socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Galerie</span>
+        <h2 class="section-title">Momente die bleiben</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gi-1"><div class="gallery-overlay"><span>Performance 2024</span></div></div>
+      <div class="gallery-item gi-2"><div class="gallery-overlay"><span>Workshop Series</span></div></div>
+      <div class="gallery-item gi-3"><div class="gallery-overlay"><span>Summer Showcase</span></div></div>
+      <div class="gallery-item gi-4"><div class="gallery-overlay"><span>Urban Night</span></div></div>
+      <div class="gallery-item gi-5"><div class="gallery-overlay"><span>Ballet Intensive</span></div></div>
+      <div class="gallery-item gi-6"><div class="gallery-overlay"><span>Studio Sessions</span></div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Stimmen</span>
+        <h2 class="section-title">Was unsere Community sagt</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Selique hat mein Leben verändert. Ich bin hier als komplette Anfängerin reingekommen und trete jetzt auf der Bühne auf. Das Team ist unglaublich!"</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar av-1">L</div>
+            <div>
+              <strong>Laura K.</strong>
+              <span>Schülerin seit 2022</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured-testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Die Atmosphäre hier ist einfach einmalig. Professionell, aber herzlich. Ich freue mich jede Woche auf meine Kurse bei Selique."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar av-2">M</div>
+            <div>
+              <strong>Micha T.</strong>
+              <span>Hip-Hop & Urban</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Meine Tochter liebt den Kids-Kurs. Sie ist so aufgeblüht, hat Freunde gefunden und tanzt zu Hause ständig weiter. Danke Selique!"</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar av-3">S</div>
+            <div>
+              <strong>Sandra M.</strong>
+              <span>Elternteil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-eyebrow light">Kontakt</span>
+          <h2>Starte deine Tanzreise</h2>
+          <p>Buche jetzt deine kostenlose Probestunde oder schreib uns — wir antworten innerhalb von 24 Stunden.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Musterstraße 42, 10115 Berlin</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.68a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+49 30 123 456 78</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hello@selique.dance</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Mo–Fr: 10:00–21:00 · Sa–So: 09:00–18:00</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Dein Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" placeholder="deine@email.de" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="course">Kurs</label>
+            <select id="course" name="course">
+              <option value="">Kurs auswählen…</option>
+              <option>Ballet & Contemporary</option>
+              <option>Hip-Hop & Urban</option>
+              <option>Heels & Jazz Funk</option>
+              <option>Latin & Salsa</option>
+              <option>Kids & Teens</option>
+              <option>Workshop / Event</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="4" placeholder="Deine Nachricht…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span class="btn-text">Probestunde anfragen</span>
+            <span class="btn-icon">→</span>
+          </button>
+          <p class="form-note">Kostenlos · Unverbindlich · Innerhalb von 24h Rückmeldung</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">SELIQUE</div>
+        <p>Tanz ist keine Fähigkeit —<br/>es ist eine Sprache.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.53V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#instructors">Team</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurse</h4>
+          <ul>
+            <li><a href="#classes">Ballet & Contemporary</a></li>
+            <li><a href="#classes">Hip-Hop & Urban</a></li>
+            <li><a href="#classes">Latin & Salsa</a></li>
+            <li><a href="#classes">Kids & Teens</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="#contact">Probestunde</a></li>
+            <li><a href="mailto:hello@selique.dance">hello@selique.dance</a></li>
+            <li><a href="tel:+493012345678">+49 30 123 456 78</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Selique Dance Studio. Alle Rechte vorbehalten.</p>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
