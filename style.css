@@ -50,9 +50,6 @@ ul { list-style: none; }
   padding: 0 2rem;
 }
 
-/* ========================
-   TYPOGRAPHY
-======================== */
 .section-eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
@@ -89,9 +86,6 @@ ul { list-style: none; }
   margin: 0 auto;
 }
 
-/* ========================
-   BUTTONS
-======================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -137,9 +131,6 @@ ul { list-style: none; }
 
 .btn-full { width: 100%; justify-content: center; }
 
-/* ========================
-   NAVBAR
-======================== */
 #navbar {
   position: fixed;
   top: 0;
@@ -216,9 +207,6 @@ ul { list-style: none; }
   transition: all 0.3s;
 }
 
-/* ========================
-   HERO
-======================== */
 #hero {
   position: relative;
   min-height: 100vh;
@@ -330,7 +318,6 @@ ul { list-style: none; }
   50% { opacity: 1; transform: scaleY(1); }
 }
 
-/* Reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -344,9 +331,6 @@ ul { list-style: none; }
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
 
-/* ========================
-   MARQUEE
-======================== */
 .marquee-wrapper {
   background: var(--gold);
   overflow: hidden;
@@ -376,9 +360,6 @@ ul { list-style: none; }
   100% { transform: translateX(-50%); }
 }
 
-/* ========================
-   ABOUT
-======================== */
 #about {
   padding: 8rem 0;
 }
@@ -445,7 +426,6 @@ ul { list-style: none; }
   margin-top: 0.25rem;
 }
 
-.about-text { }
 .about-text p {
   color: var(--white-dim);
   margin-bottom: 1.25rem;
@@ -453,9 +433,6 @@ ul { list-style: none; }
   line-height: 1.8;
 }
 
-/* ========================
-   CLASSES
-======================== */
 #classes {
   padding: 8rem 0;
   background: var(--dark);
@@ -556,19 +533,13 @@ ul { list-style: none; }
   font-weight: 500;
   color: var(--gold);
   letter-spacing: 0.03em;
-  transition: gap var(--transition);
   display: inline-block;
 }
 .class-link:hover { opacity: 0.8; }
 
-/* ========================
-   EXPERIENCE STRIP
-======================== */
 #experience {
   padding: 7rem 0;
-  background:
-    linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, transparent 50%),
-    var(--dark-2);
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, transparent 50%), var(--dark-2);
   border-top: 1px solid rgba(201, 169, 110, 0.1);
   border-bottom: 1px solid rgba(201, 169, 110, 0.1);
 }
@@ -632,9 +603,6 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 
-/* ========================
-   INSTRUCTORS
-======================== */
 #instructors {
   padding: 8rem 0;
   background: var(--black);
@@ -676,15 +644,7 @@ ul { list-style: none; }
   width: 140px;
   height: 220px;
   background: linear-gradient(to top, rgba(201, 169, 110, 0.2), rgba(201, 169, 110, 0.03));
-  clip-path: polygon(
-    40% 0%, 60% 0%,
-    70% 8%, 68% 18%,
-    80% 30%, 76% 50%,
-    82% 70%, 75% 100%,
-    25% 100%, 18% 70%,
-    24% 50%, 20% 30%,
-    32% 18%, 30% 8%
-  );
+  clip-path: polygon(40% 0%, 60% 0%, 70% 8%, 68% 18%, 80% 30%, 76% 50%, 82% 70%, 75% 100%, 25% 100%, 18% 70%, 24% 50%, 20% 30%, 32% 18%, 30% 8%);
 }
 
 .instructor-info {
@@ -733,9 +693,6 @@ ul { list-style: none; }
   transform: scale(1.1);
 }
 
-/* ========================
-   GALLERY
-======================== */
 #gallery {
   padding: 8rem 0;
   background: var(--dark);
@@ -773,13 +730,11 @@ ul { list-style: none; }
 .gi-5 { background: linear-gradient(135deg, #1a1408 0%, #2d200d 100%); }
 .gi-6 { background: linear-gradient(135deg, #0a141a 0%, #0d202d 100%); }
 
-/* Gallery placeholder patterns */
 .gallery-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(ellipse 60% 80% at 50% 80%, rgba(201,169,110,0.12) 0%, transparent 70%);
+  background-image: radial-gradient(ellipse 60% 80% at 50% 80%, rgba(201,169,110,0.12) 0%, transparent 70%);
 }
 
 .gallery-overlay {
@@ -802,9 +757,6 @@ ul { list-style: none; }
   color: var(--gold);
 }
 
-/* ========================
-   TESTIMONIALS
-======================== */
 #testimonials {
   padding: 8rem 0;
   background: var(--black);
@@ -883,9 +835,6 @@ blockquote {
   color: var(--white-dim);
 }
 
-/* ========================
-   CONTACT
-======================== */
 #contact {
   padding: 8rem 0;
   background: var(--dark);
@@ -931,7 +880,6 @@ blockquote {
   color: var(--gold);
 }
 
-/* FORM */
 .contact-form {
   background: var(--dark-2);
   border: 1px solid rgba(255,255,255,0.07);
@@ -1001,7 +949,6 @@ blockquote {
   margin-top: 1rem;
 }
 
-/* Form success state */
 .contact-form.success .form-row,
 .contact-form.success .form-group,
 .contact-form.success .btn { display: none; }
@@ -1020,9 +967,6 @@ blockquote {
 }
 .success-message p { color: var(--white-dim); }
 
-/* ========================
-   FOOTER
-======================== */
 #footer {
   background: var(--black);
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -1131,9 +1075,6 @@ blockquote {
 }
 .footer-legal a:hover { color: var(--white-dim); }
 
-/* ========================
-   SCROLL ANIMATIONS
-======================== */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -1144,20 +1085,10 @@ blockquote {
   transform: translateY(0);
 }
 
-/* ========================
-   RESPONSIVE
-======================== */
 @media (max-width: 1024px) {
   .classes-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6 {
-    grid-column: span 1;
-    grid-row: span 1;
-    height: 220px;
-  }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6 { grid-column: span 1; grid-row: span 1; height: 220px; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-visual { display: none; }
   .experience-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -1169,9 +1100,7 @@ blockquote {
 @media (max-width: 768px) {
   #navbar { padding: 1.25rem 1.5rem; }
   #navbar.scrolled { padding: 0.875rem 1.5rem; }
-
   .menu-toggle { display: flex; z-index: 100; }
-
   .nav-links {
     display: none;
     position: fixed;
@@ -1184,25 +1113,15 @@ blockquote {
     z-index: 99;
   }
   .nav-links.open { display: flex; }
-  .nav-links a {
-    font-size: 1.1rem;
-    color: var(--white);
-  }
-  .nav-cta {
-    padding: 0.875rem 2rem !important;
-  }
-
+  .nav-links a { font-size: 1.1rem; color: var(--white); }
+  .nav-cta { padding: 0.875rem 2rem !important; }
   .hero-title { font-size: clamp(4rem, 18vw, 7rem); }
-
   .classes-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .instructors-grid { grid-template-columns: 1fr; }
-
   .form-row { grid-template-columns: 1fr; }
-
   .footer-links { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-
   .gallery-grid { grid-template-columns: 1fr 1fr; }
 }
 
