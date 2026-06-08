@@ -1,1 +1,1877 @@
-placeholder_will_be_replaced
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SELIQUE – Dance Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet" />
+  <style>
+/* ========================
+   RESET & BASE
+======================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #080808;
+  --dark: #111111;
+  --dark-2: #1a1a1a;
+  --dark-3: #222222;
+  --gold: #c9a96e;
+  --gold-light: #e8c99a;
+  --gold-dark: #9a7a4a;
+  --white: #f8f6f2;
+  --white-dim: rgba(248, 246, 242, 0.7);
+  --white-faint: rgba(248, 246, 242, 0.1);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-display: 'Italiana', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ========================
+   TYPOGRAPHY
+======================== */
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.section-eyebrow.light { color: var(--gold-light); }
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.section-desc {
+  color: var(--white-dim);
+  max-width: 540px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-header .section-desc {
+  margin: 0 auto;
+}
+
+/* ========================
+   BUTTONS
+======================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--black);
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-primary:hover::after { opacity: 0.15; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201, 169, 110, 0.3); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(248, 246, 242, 0.3);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.btn-full { width: 100%; justify-content: center; }
+
+/* ========================
+   NAVBAR
+======================== */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  transition: all var(--transition);
+}
+
+#navbar.scrolled {
+  background: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(20px);
+  padding: 1rem 3rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  transition: color var(--transition);
+}
+.logo:hover { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  font-weight: 500 !important;
+  transition: all var(--transition) !important;
+}
+.nav-cta:hover {
+  background: var(--gold-light) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.3);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+
+/* ========================
+   HERO
+======================== */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201, 169, 110, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #0d0b08 0%, #080808 100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(8,8,8,0.7) 100%);
+}
+
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+  background: var(--gold);
+  animation: floatShape 20s infinite ease-in-out;
+}
+.s1 { width: 600px; height: 600px; top: -100px; left: -200px; animation-delay: 0s; }
+.s2 { width: 400px; height: 400px; bottom: -50px; right: -100px; animation-delay: -7s; }
+.s3 { width: 250px; height: 250px; top: 40%; left: 60%; animation-delay: -14s; }
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.97); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 50%, var(--white) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white-dim);
+  margin-bottom: 3rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.scroll-indicator span {
+  display: block;
+  width: 1.5px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+/* ========================
+   MARQUEE
+======================== */
+.marquee-wrapper {
+  background: var(--gold);
+  overflow: hidden;
+  padding: 0.9rem 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+.marquee-track span {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.marquee-track .dot {
+  opacity: 0.4;
+  letter-spacing: 0;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========================
+   ABOUT
+======================== */
+#about {
+  padding: 8rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  height: 480px;
+}
+
+.about-image-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 350px;
+  background: linear-gradient(to top, rgba(201, 169, 110, 0.15), transparent);
+  clip-path: polygon(35% 0%, 65% 0%, 80% 20%, 75% 50%, 85% 80%, 70% 100%, 30% 100%, 15% 80%, 25% 50%, 20% 20%);
+}
+
+.about-card {
+  position: absolute;
+  z-index: 2;
+  background: var(--dark-2);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.75rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.card-1 { top: -20px; right: -20px; }
+.card-2 { bottom: 60px; left: -30px; }
+.card-3 { top: 50%; right: -30px; transform: translateY(-50%); }
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--white-dim);
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.about-text { }
+.about-text p {
+  color: var(--white-dim);
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ========================
+   CLASSES
+======================== */
+#classes {
+  padding: 8rem 0;
+  background: var(--dark);
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.class-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  transition: all var(--transition);
+  cursor: default;
+  overflow: hidden;
+}
+
+.class-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.class-card:hover {
+  border-color: rgba(201, 169, 110, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+}
+.class-card:hover::before { opacity: 1; }
+
+.class-card.featured {
+  border-color: rgba(201, 169, 110, 0.4);
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.06) 0%, var(--dark-2) 100%);
+}
+
+.class-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+}
+
+.class-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.class-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.class-card p {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.class-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.class-meta span {
+  font-size: 0.75rem;
+  color: var(--gold);
+  background: rgba(201, 169, 110, 0.1);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.class-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  transition: gap var(--transition);
+  display: inline-block;
+}
+.class-link:hover { opacity: 0.8; }
+
+/* ========================
+   EXPERIENCE STRIP
+======================== */
+#experience {
+  padding: 7rem 0;
+  background:
+    linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, transparent 50%),
+    var(--dark-2);
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.experience-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.exp-text h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.exp-text p {
+  color: var(--white-dim);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.exp-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.exp-feature {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.exp-icon {
+  color: var(--gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.exp-feature strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.exp-feature p {
+  font-size: 0.875rem;
+  color: var(--white-dim);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ========================
+   INSTRUCTORS
+======================== */
+#instructors {
+  padding: 8rem 0;
+  background: var(--black);
+}
+
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.instructor-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.instructor-card:hover {
+  border-color: rgba(201, 169, 110, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.instructor-photo {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.photo-1 { background: linear-gradient(160deg, #1a1208 0%, #2a1e0e 50%, #1a0e0a 100%); }
+.photo-2 { background: linear-gradient(160deg, #0a1020 0%, #0e1a2a 50%, #0a0e1a 100%); }
+.photo-3 { background: linear-gradient(160deg, #1a0a14 0%, #2a0e1e 50%, #1a0a10 100%); }
+
+.instructor-silhouette {
+  width: 140px;
+  height: 220px;
+  background: linear-gradient(to top, rgba(201, 169, 110, 0.2), rgba(201, 169, 110, 0.03));
+  clip-path: polygon(
+    40% 0%, 60% 0%,
+    70% 8%, 68% 18%,
+    80% 30%, 76% 50%,
+    82% 70%, 75% 100%,
+    25% 100%, 18% 70%,
+    24% 50%, 20% 30%,
+    32% 18%, 30% 8%
+  );
+}
+
+.instructor-info {
+  padding: 1.5rem;
+}
+
+.instructor-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.instructor-style {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.instructor-info p {
+  font-size: 0.875rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.instructor-socials a {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: var(--white-dim);
+  transition: all var(--transition);
+}
+.instructor-socials a svg { width: 14px; height: 14px; }
+.instructor-socials a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: scale(1.1);
+}
+
+/* ========================
+   GALLERY
+======================== */
+#gallery {
+  padding: 8rem 0;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+#gallery .section-header { padding: 0 2rem; margin-bottom: 3rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gi-1 { grid-column: span 3; grid-row: span 1; }
+.gi-2 { grid-column: span 2; grid-row: span 1; }
+.gi-3 { grid-column: span 1; grid-row: span 2; }
+.gi-4 { grid-column: span 2; grid-row: span 1; }
+.gi-5 { grid-column: span 1; grid-row: span 1; }
+.gi-6 { grid-column: span 2; grid-row: span 1; }
+
+.gi-1 { background: linear-gradient(135deg, #1a0e0a 0%, #2d1a0d 100%); }
+.gi-2 { background: linear-gradient(135deg, #0a0e1a 0%, #0d1a2d 100%); }
+.gi-3 { background: linear-gradient(135deg, #0e1a0a 0%, #1a2d0d 100%); }
+.gi-4 { background: linear-gradient(135deg, #1a0a14 0%, #2d0d1a 100%); }
+.gi-5 { background: linear-gradient(135deg, #1a1408 0%, #2d200d 100%); }
+.gi-6 { background: linear-gradient(135deg, #0a141a 0%, #0d202d 100%); }
+
+/* Gallery placeholder patterns */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 60% 80% at 50% 80%, rgba(201,169,110,0.12) 0%, transparent 70%);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 8, 0.7);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-overlay span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ========================
+   TESTIMONIALS
+======================== */
+#testimonials {
+  padding: 8rem 0;
+  background: var(--black);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all var(--transition);
+}
+.testimonial-card:hover {
+  border-color: rgba(201, 169, 110, 0.2);
+  transform: translateY(-2px);
+}
+
+.featured-testimonial {
+  border-color: rgba(201, 169, 110, 0.3);
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.06) 0%, var(--dark-2) 100%);
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  color: var(--black);
+}
+.av-1 { background: var(--gold); }
+.av-2 { background: var(--gold-light); }
+.av-3 { background: var(--gold-dark); color: var(--white); }
+
+.testimonial-author strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.testimonial-author span {
+  font-size: 0.75rem;
+  color: var(--white-dim);
+}
+
+/* ========================
+   CONTACT
+======================== */
+#contact {
+  padding: 8rem 0;
+  background: var(--dark);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+.contact-info p {
+  color: var(--white-dim);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--white-dim);
+}
+.contact-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+/* FORM */
+.contact-form {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  transition: border-color var(--transition);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(248,246,242,0.3); }
+.form-group select option { background: var(--dark-2); }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  background: rgba(201, 169, 110, 0.04);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.btn-icon {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+.btn-primary:hover .btn-icon { transform: translateX(4px); }
+
+.form-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--white-dim);
+  margin-top: 1rem;
+}
+
+/* Form success state */
+.contact-form.success .form-row,
+.contact-form.success .form-group,
+.contact-form.success .btn { display: none; }
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.contact-form.success .success-message { display: block; }
+.success-message h3 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.success-message p { color: var(--white-dim); }
+
+/* ========================
+   FOOTER
+======================== */
+#footer {
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 5rem 0 0;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 6rem;
+  margin-bottom: 4rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  color: var(--white-dim);
+  font-size: 0.9rem;
+  font-style: italic;
+  font-family: var(--font-serif);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.footer-socials a {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: var(--white-dim);
+  transition: all var(--transition);
+}
+.footer-socials a svg { width: 16px; height: 16px; }
+.footer-socials a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col a {
+  font-size: 0.875rem;
+  color: var(--white-dim);
+  transition: color var(--transition);
+}
+.footer-col a:hover { color: var(--gold); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(248,246,242,0.35);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-legal a {
+  font-size: 0.8rem;
+  color: rgba(248,246,242,0.35);
+  transition: color var(--transition);
+}
+.footer-legal a:hover { color: var(--white-dim); }
+
+/* ========================
+   SCROLL ANIMATIONS
+======================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 1024px) {
+  .classes-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6 {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 220px;
+  }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-visual { display: none; }
+  .experience-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .instructors-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  #navbar { padding: 1.25rem 1.5rem; }
+  #navbar.scrolled { padding: 0.875rem 1.5rem; }
+
+  .menu-toggle { display: flex; z-index: 100; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,8,8,0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    font-size: 1.1rem;
+    color: var(--white);
+  }
+  .nav-cta {
+    padding: 0.875rem 2rem !important;
+  }
+
+  .hero-title { font-size: clamp(4rem, 18vw, 7rem); }
+
+  .classes-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .instructors-grid { grid-template-columns: 1fr; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .footer-links { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 1.25rem; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6 { height: 200px; }
+  .footer-links { grid-template-columns: 1fr; }
+  .contact-form { padding: 1.75rem 1.25rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="logo">SELIQUE</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#classes">Kurse</a></li>
+      <li><a href="#instructors">Team</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+      <li><a href="#contact" class="nav-cta">Probestunde</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="floating-shapes">
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+        <div class="shape s3"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Willkommen bei</p>
+      <h1 class="hero-title reveal delay-1">SELIQUE</h1>
+      <p class="hero-subtitle reveal delay-2">Wo Leidenschaft zur Kunst wird.</p>
+      <div class="hero-actions reveal delay-3">
+        <a href="#classes" class="btn btn-primary">Kurse entdecken</a>
+        <a href="#about" class="btn btn-outline">Mehr erfahren</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- MARQUEE BANNER -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>Contemporary</span><span class="dot">·</span>
+      <span>Latin</span><span class="dot">·</span>
+      <span>Hip-Hop</span><span class="dot">·</span>
+      <span>Ballet</span><span class="dot">·</span>
+      <span>Jazz</span><span class="dot">·</span>
+      <span>Heels</span><span class="dot">·</span>
+      <span>Waacking</span><span class="dot">·</span>
+      <span>Contemporary</span><span class="dot">·</span>
+      <span>Latin</span><span class="dot">·</span>
+      <span>Hip-Hop</span><span class="dot">·</span>
+      <span>Ballet</span><span class="dot">·</span>
+      <span>Jazz</span><span class="dot">·</span>
+      <span>Heels</span><span class="dot">·</span>
+      <span>Waacking</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-card card-1">
+            <div class="card-inner">
+              <div class="stat-number">12+</div>
+              <div class="stat-label">Jahre Erfahrung</div>
+            </div>
+          </div>
+          <div class="about-card card-2">
+            <div class="card-inner">
+              <div class="stat-number">800+</div>
+              <div class="stat-label">Schüler</div>
+            </div>
+          </div>
+          <div class="about-card card-3">
+            <div class="card-inner">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Kurse</div>
+            </div>
+          </div>
+          <div class="about-image-placeholder">
+            <div class="silhouette"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-eyebrow">Über uns</span>
+          <h2 class="section-title">Tanz ist mehr als Bewegung — es ist Ausdruck</h2>
+          <p>Selique Dance wurde mit einer klaren Vision gegründet: einen Ort zu schaffen, an dem Tanz keine Grenzen kennt. Ob Anfänger oder Fortgeschrittene — bei uns findet jeder seinen Rhythmus.</p>
+          <p>Unser professionelles Team aus leidenschaftlichen Tanzlehrerinnen und Tanzlehrern begleitet dich auf deinem Weg — mit Herz, Fachwissen und einer Atmosphäre, in der du dich entfalten kannst.</p>
+          <a href="#classes" class="btn btn-primary">Unsere Kurse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section id="classes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Kursangebot</span>
+        <h2 class="section-title">Finde deinen Stil</h2>
+        <p class="section-desc">Von klassischem Ballett bis urbaner Street-Dance — wir bieten für jeden Geschmack das Richtige.</p>
+      </div>
+      <div class="classes-grid">
+        <div class="class-card" data-delay="0">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M24 17c-7 0-12 5-12 11v2h24v-2c0-6-5-11-12-11z" stroke="currentColor" stroke-width="2"/><path d="M16 30l-4 10M32 30l4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Ballet & Contemporary</h3>
+          <p>Klassische Technik trifft modernen Ausdruck. Für alle Levels.</p>
+          <div class="class-meta">
+            <span>Mo, Mi · 18:00</span>
+            <span>All levels</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card featured" data-delay="100">
+          <div class="class-badge">Beliebt</div>
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 36c4-8 12-12 16-12s12 4 16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Hip-Hop & Urban</h3>
+          <p>Authentische Street-Dance Kultur — energiegeladen, kreativ, frei.</p>
+          <div class="class-meta">
+            <span>Di, Do · 19:00</span>
+            <span>Beginner – Advanced</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="200">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 38c0-6 5-10 12-10s12 4 12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 28V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 20l6-4 6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="11" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Heels & Jazz Funk</h3>
+          <p>Power, Femininity und Style — tanze mit Absatz und voller Energie.</p>
+          <div class="class-meta">
+            <span>Fr · 18:30</span>
+            <span>Intermediate</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="300">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M14 10l-4 28M34 10l4 28M14 24h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="10" r="3" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Latin & Salsa</h3>
+          <p>Feuer, Rhythmus, Leidenschaft — Latin Dance für Paare und Solo.</p>
+          <div class="class-meta">
+            <span>Sa · 17:00</span>
+            <span>Beginner welcome</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="400">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="20" width="28" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 20V14a6 6 0 0112 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="29" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Kids & Teens</h3>
+          <p>Tanz für Kinder ab 5 Jahren — spielerisch, kreativ und altersgerecht.</p>
+          <div class="class-meta">
+            <span>Sa · 10:00 – 13:00</span>
+            <span>Ab 5 Jahren</span>
+          </div>
+          <a href="#contact" class="class-link">Anmelden →</a>
+        </div>
+        <div class="class-card" data-delay="500">
+          <div class="class-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 8v32M8 24h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M13 13l22 22M35 13L13 35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Workshops & Events</h3>
+          <p>Gastkünstler, Intensiv-Workshops und unvergessliche Performance-Nächte.</p>
+          <div class="class-meta">
+            <span>Regelmäßig</span>
+            <span>Alle willkommen</span>
+          </div>
+          <a href="#contact" class="class-link">Mehr erfahren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE STRIP -->
+  <section id="experience">
+    <div class="experience-inner">
+      <div class="exp-text">
+        <span class="section-eyebrow light">Das Selique-Feeling</span>
+        <h2>Tanz verbindet.<br/>Selique inspiriert.</h2>
+        <p>Unser Studio ist mehr als ein Kursraum — es ist eine Community. Ein Ort für alle, die tanzen wollen, müssen, lieben.</p>
+        <a href="#contact" class="btn btn-primary">Probestunde buchen</a>
+      </div>
+      <div class="exp-features">
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Professionelle Lehrkräfte</strong>
+            <p>Zertifiziert, leidenschaftlich, erfahren.</p>
+          </div>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Moderne Studios</strong>
+            <p>Spiegelwände, Sprungboden, Soundanlage.</p>
+          </div>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Flexible Kurszeiten</strong>
+            <p>Morgens, abends, am Wochenende.</p>
+          </div>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-icon">✦</div>
+          <div>
+            <strong>Alle Levels willkommen</strong>
+            <p>Von der ersten Tanzerfahrung bis zur Bühne.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTORS -->
+  <section id="instructors">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Unser Team</span>
+        <h2 class="section-title">Deine Tanzlehrerinnen & -lehrer</h2>
+        <p class="section-desc">Leidenschaft trifft Professionalität — lerne unser Team kennen.</p>
+      </div>
+      <div class="instructors-grid">
+        <div class="instructor-card">
+          <div class="instructor-photo photo-1">
+            <div class="instructor-silhouette"></div>
+          </div>
+          <div class="instructor-info">
+            <h3>Sofia Marchetti</h3>
+            <span class="instructor-style">Ballet · Contemporary</span>
+            <p>15 Jahre Bühnenerfahrung. Ausgebildet in Mailand und Wien.</p>
+            <div class="instructor-socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-photo photo-2">
+            <div class="instructor-silhouette"></div>
+          </div>
+          <div class="instructor-info">
+            <h3>Marcus Rivera</h3>
+            <span class="instructor-style">Hip-Hop · Breaking</span>
+            <p>International bekannter Street-Dancer und Choreograf.</p>
+            <div class="instructor-socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-photo photo-3">
+            <div class="instructor-silhouette"></div>
+          </div>
+          <div class="instructor-info">
+            <h3>Leila Santos</h3>
+            <span class="instructor-style">Latin · Heels · Jazz</span>
+            <p>Weltmeisterin im Latin Dance, Choreografin für Film & TV.</p>
+            <div class="instructor-socials">
+              <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Galerie</span>
+        <h2 class="section-title">Momente die bleiben</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gi-1"><div class="gallery-overlay"><span>Performance 2024</span></div></div>
+      <div class="gallery-item gi-2"><div class="gallery-overlay"><span>Workshop Series</span></div></div>
+      <div class="gallery-item gi-3"><div class="gallery-overlay"><span>Summer Showcase</span></div></div>
+      <div class="gallery-item gi-4"><div class="gallery-overlay"><span>Urban Night</span></div></div>
+      <div class="gallery-item gi-5"><div class="gallery-overlay"><span>Ballet Intensive</span></div></div>
+      <div class="gallery-item gi-6"><div class="gallery-overlay"><span>Studio Sessions</span></div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Stimmen</span>
+        <h2 class="section-title">Was unsere Community sagt</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Selique hat mein Leben verändert. Ich bin hier als komplette Anfängerin reingekommen und trete jetzt auf der Bühne auf. Das Team ist unglaublich!"</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar av-1">L</div>
+            <div>
+              <strong>Laura K.</strong>
+              <span>Schülerin seit 2022</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured-testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Die Atmosphäre hier ist einfach einmalig. Professionell, aber herzlich. Ich freue mich jede Woche auf meine Kurse bei Selique."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar av-2">M</div>
+            <div>
+              <strong>Micha T.</strong>
+              <span>Hip-Hop & Urban</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Meine Tochter liebt den Kids-Kurs. Sie ist so aufgeblüht, hat Freunde gefunden und tanzt zu Hause ständig weiter. Danke Selique!"</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar av-3">S</div>
+            <div>
+              <strong>Sandra M.</strong>
+              <span>Elternteil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-eyebrow light">Kontakt</span>
+          <h2>Starte deine Tanzreise</h2>
+          <p>Buche jetzt deine kostenlose Probestunde oder schreib uns — wir antworten innerhalb von 24 Stunden.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Musterstraße 42, 10115 Berlin</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.68a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+49 30 123 456 78</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hello@selique.dance</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Mo–Fr: 10:00–21:00 · Sa–So: 09:00–18:00</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Dein Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" placeholder="deine@email.de" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="course">Kurs</label>
+            <select id="course" name="course">
+              <option value="">Kurs auswählen…</option>
+              <option>Ballet & Contemporary</option>
+              <option>Hip-Hop & Urban</option>
+              <option>Heels & Jazz Funk</option>
+              <option>Latin & Salsa</option>
+              <option>Kids & Teens</option>
+              <option>Workshop / Event</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="4" placeholder="Deine Nachricht…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span class="btn-text">Probestunde anfragen</span>
+            <span class="btn-icon">→</span>
+          </button>
+          <p class="form-note">Kostenlos · Unverbindlich · Innerhalb von 24h Rückmeldung</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">SELIQUE</div>
+        <p>Tanz ist keine Fähigkeit —<br/>es ist eine Sprache.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.53V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#instructors">Team</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurse</h4>
+          <ul>
+            <li><a href="#classes">Ballet & Contemporary</a></li>
+            <li><a href="#classes">Hip-Hop & Urban</a></li>
+            <li><a href="#classes">Latin & Salsa</a></li>
+            <li><a href="#classes">Kids & Teens</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="#contact">Probestunde</a></li>
+            <li><a href="mailto:hello@selique.dance">hello@selique.dance</a></li>
+            <li><a href="tel:+493012345678">+49 30 123 456 78</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Selique Dance Studio. Alle Rechte vorbehalten.</p>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* Selique Dance – Main JS */
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+
+  const spans = menuToggle.querySelectorAll('span');
+  if (isOpen) {
+    spans[0].style.cssText = 'transform: rotate(45deg) translate(5px, 5px)';
+    spans[1].style.cssText = 'opacity: 0';
+    spans[2].style.cssText = 'transform: rotate(-45deg) translate(5px, -5px)';
+  } else {
+    spans.forEach(s => s.style.cssText = '');
+  }
+});
+
+// Close menu on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
+    menuToggle.querySelectorAll('span').forEach(s => s.style.cssText = '');
+  });
+});
+
+// Intersection Observer for animations
+const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe all reveal & fade-up elements
+document.querySelectorAll('.reveal, .fade-up').forEach(el => observer.observe(el));
+
+// Staggered card animations
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const delay = parseInt(entry.target.dataset.delay || '0');
+      setTimeout(() => {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }, delay);
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.class-card, .instructor-card, .testimonial-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = 'opacity 0.6s ease, transform 0.6s ease, border-color 0.4s, box-shadow 0.4s';
+  cardObserver.observe(card);
+});
+
+// Initial hero reveals on load
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+  }, 100);
+});
+
+// About section cards fade-in
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.about-card').forEach((card, i) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = card.style.transform.replace('translateY(20px)', 'translateY(0)') || 'translateY(0)';
+        }, i * 150);
+      });
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('#about .about-visual').forEach(el => {
+  el.querySelectorAll('.about-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+  aboutObserver.observe(el);
+});
+
+// Smooth parallax on hero
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent && window.scrollY < window.innerHeight) {
+        heroContent.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+        heroContent.style.opacity = 1 - (window.scrollY / (window.innerHeight * 0.7));
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+// Contact form
+const form = document.getElementById('contactForm');
+if (form) {
+  // Add success message element
+  const successMsg = document.createElement('div');
+  successMsg.className = 'success-message';
+  successMsg.innerHTML = `
+    <h3>Danke!</h3>
+    <p>Wir haben deine Nachricht erhalten und melden uns innerhalb von 24 Stunden bei dir.</p>
+  `;
+  form.appendChild(successMsg);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.querySelector('.btn-text').textContent = 'Wird gesendet…';
+
+    // Simulate submission
+    setTimeout(() => {
+      form.classList.add('success');
+    }, 1200);
+  });
+}
+
+// Gallery hover ripple effect
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+    const rect = item.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    item.style.background = item.style.background.replace(
+      /radial-gradient[^,]*/,
+      `radial-gradient(circle at ${x}% ${y}%, rgba(201,169,110,0.15) 0%, transparent 60%)`
+    );
+  });
+});
+
+// Number counter animation for stats
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.stat-number').forEach(el => {
+        const target = parseInt(el.textContent);
+        const suffix = el.textContent.replace(/\d/g, '');
+        let current = 0;
+        const increment = target / 40;
+        const timer = setInterval(() => {
+          current = Math.min(current + increment, target);
+          el.textContent = Math.round(current) + suffix;
+          if (current >= target) clearInterval(timer);
+        }, 40);
+      });
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('#about .about-visual').forEach(el => statObserver.observe(el));
+
+  </script>
+</body>
+</html>
